@@ -1,0 +1,106 @@
+{
+  "name": "routines-mini",
+  "version": "0.1.0",
+  "private": true,
+  "main": "build/electron/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.4",
+    "@chakra-ui/react": "^1.2.1",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^5.3.0",
+    "copyfiles": "^2.4.1",
+    "dexie": "^3.1.0-alpha.6",
+    "dexie-react-hooks": "^1.0.2",
+    "electron-is-dev": "^1.2.0",
+    "emoji-picker-react": "^3.4.2",
+    "framer-motion": "^3.2.2-rc.1",
+    "react": "^17.0.1",
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.14.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
+    "wait-on": "^5.2.1",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"BROWSER=none yarn start\" \"yarn electron\"",
+    "assets": "copyfiles electron/assets/* build",
+    "electron:dev": "concurrently \"BROWSER=none yarn start\" \"yarn assets\" \"wait-on tcp:3000 && tsc -p electron -w\" \"tsc -p electron && yarn electron\"",
+    "electron": "wait-on tcp:3000 && electron-forge start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "package": "react-scripts build && electron-forge package",
+    "make": "NODE_ENV=production yarn build && yarn assets && tsc -p electron && electron-forge make"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "@types/react-color": "^3.0.4",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "electron": "^11.2.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "Routines Mini",
+        "icon": "icons/icon.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "routines_mini"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

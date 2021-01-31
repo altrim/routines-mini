@@ -1,0 +1,26 @@
+.Routines {
+  padding-top: 90px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.Routines ul li:hover {
+  background-color: #fafbfc;
+}
+
+.Routines ul li a {
+  cursor: pointer;
+  display: flex;
+  padding: 0.85rem 0.25rem;
+  align-items: center;
+}
+
+.Routines ul li a:hover {
+  color: #22506d;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
