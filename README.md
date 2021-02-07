@@ -2,7 +2,12 @@
 
 A Mac Menu Bar application for organizing your routines.
 
-I wrote a bit about the app on my blog [Building a Mac Menu Bar application with React, TypeScript and Electron](https://altrim.io/posts/building-mac-menu-bar-app-with-react-typescript-electron)
+![Routines Mini](https://altrim.io/images/routines-mini-scheduler.gif)
+
+
+I wrote a bit about the app on my blog 
+- [Building a Mac Menu Bar application with React, TypeScript and Electron](https://altrim.io/posts/building-mac-menu-bar-app-with-react-typescript-electron)
+- [Schedule recurring reminders with native notifications](https://altrim.io/posts/schedule-recurring-reminders-with-native-notifications)
 
 The app is built using
 
