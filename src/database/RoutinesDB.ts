@@ -1,19 +1,20 @@
 import Dexie, { Table } from 'dexie';
-import { RoutinesTable } from './RoutinesService';
-import { TasksTable } from './TasksService';
+import { Routine } from './RoutinesService';
+import { Task } from './TasksService';
 
 class RoutinesDB extends Dexie {
-  routines!: Table<RoutinesTable>;
-  tasks!: Table<TasksTable>;
+  routines!: Table<Routine>;
+  tasks!: Table<Task>;
 
   constructor() {
     super('routinesDB');
-    this.version(2).stores({
+    this.version(3).stores({
       routines: `
         ++id,
         title,
         color,
-        emoji`,
+        emoji,
+        scheduleAt`,
       tasks: `
       ++id,
         title,

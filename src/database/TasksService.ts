@@ -1,13 +1,6 @@
 import { Table } from 'dexie';
 import { db } from './RoutinesDB';
 
-export type TasksTable = {
-  id?: number;
-  routineId: number;
-  title: string;
-  done?: boolean;
-};
-
 export type Task = {
   id?: number;
   routineId: number;
@@ -16,7 +9,7 @@ export type Task = {
 };
 
 class TasksService {
-  table: Table<TasksTable>;
+  table: Table<Task>;
 
   constructor() {
     this.table = db.tasks;
@@ -55,7 +48,7 @@ class TasksService {
       .count();
   }
 
-  async allTasksCompletedForRoutine(routineId: number) {
+  async allTasksCompletedForRoutine(routineId: number): Promise<boolean> {
     const tasks = await this.getTaskCountForRoutine(routineId);
     const completed = await this.getCompletedTaskCountForRoutine(routineId);
 
