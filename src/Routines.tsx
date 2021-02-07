@@ -4,9 +4,9 @@ import { Button, Heading, List, useDisclosure } from '@chakra-ui/react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { routinesService } from './database/RoutinesService';
 import { RoutineCreator } from './RoutineCreator';
+import { RoutineItem } from './RoutineItem';
 import { Toolbar } from './Toolbar';
 import { useOverflowY } from './useOverflowY';
-import { RoutineItem } from './RoutineItem';
 import styles from './Routines.module.css';
 
 export const Routines: React.FC = () => {

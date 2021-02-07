@@ -1,23 +1,17 @@
 import { Table } from 'dexie';
 import { db } from './RoutinesDB';
 
-export type RoutinesTable = {
+export type Routine = {
   id?: number;
   title: string;
   icon?: string;
   color?: string;
   emoji?: string;
-};
-
-export type Routine = {
-  id?: number;
-  title: string;
-  color?: string;
-  emoji?: string;
+  scheduleAt?: string;
 };
 
 class RoutinesService {
-  table: Table<RoutinesTable>;
+  table: Table<Routine>;
 
   constructor() {
     this.table = db.routines;

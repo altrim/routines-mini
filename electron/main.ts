@@ -1,14 +1,14 @@
+import { app, BrowserWindow } from 'electron';
 import * as isDev from 'electron-is-dev';
 import { TrayBuilder } from './TrayBuilder';
-import { app, BrowserWindow } from 'electron';
 
 let mainWindow: BrowserWindow | null = null;
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
     backgroundColor: '#1a3d53',
-    width: 400,
-    height: 600,
+    width: 440,
+    height: 730,
     show: false,
     frame: false,
     fullscreenable: false,
