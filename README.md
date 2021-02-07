@@ -2,7 +2,7 @@
 
 A Mac Menu Bar application for organizing your routines.
 
-![Routines Mini](https://altrim.io/images/routines-mini-scheduler.gif)
+![Routines Mini](https://altrim.io/images/routine-creator.png)
 
 
 I wrote a bit about the app on my blog 
